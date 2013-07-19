@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stock: 
+  card: 
+  run: false
+  opcode: 1
+
+two:
+  stock: 
+  card: 
+  run: false
+  opcode: 1

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/!svn/ver/82/app/models
+END
+rest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/21/app/models/rest.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/33/app/models/user.rb
+END
+debt.rb
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/23/app/models/debt.rb
+END
+item_doc.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/82/app/models/item_doc.rb
+END
+stock.rb
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/!svn/ver/74/app/models/stock.rb
+END
+good.rb
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/32/app/models/good.rb
+END
+interest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/6/app/models/interest.rb
+END
+price.rb
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/!svn/ver/13/app/models/price.rb
+END
+price_type.rb
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/!svn/ver/23/app/models/price_type.rb
+END
+cash_doc.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/26/app/models/cash_doc.rb
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/1/app/models/.gitkeep
+END
+goods_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/24/app/models/goods_tag.rb
+END
+expense.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/81/app/models/expense.rb
+END
+card.rb
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/!svn/ver/22/app/models/card.rb
+END
+item_doc_row.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/15/app/models/item_doc_row.rb
+END
+income.rb
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/!svn/ver/82/app/models/income.rb
+END
+tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/!svn/ver/61/app/models/tag.rb
+END

@@ -1,0 +1,13 @@
+class CreateCards < ActiveRecord::Migration
+  def change
+    create_table :cards do |t|
+      t.string :cardno
+      t.string :name
+      t.string :lastname
+      t.string :surname
+      t.date :birthdate
+
+      t.timestamps
+    end
+  end
+end

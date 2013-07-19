@@ -1,0 +1,8 @@
+<h1>Товарный документ</h1>
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<%= render 'form' %>
+
+<%= link_to 'Показать', @item_doc %> |
+<%= link_to 'Назад', item_docs_path %>

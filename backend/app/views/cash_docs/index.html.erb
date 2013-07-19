@@ -1,0 +1,25 @@
+<h1>Кассовые документы</h1>
+<%= link_to 'Новый документ', new_cash_doc_path %>
+<table>
+  <tr>
+    <th>Клиент</th>
+    <th>Вид операции</th>
+    <th>Проведен</th>
+    <th>Сумма</th>
+    <th></th>
+  </tr>
+
+<% @cash_docs.each do |cash_doc| %>
+  <tr>
+    <td><%= unless cash_doc.card.nil? then cash_doc.card.full_name end %></td>
+    <td><%= link_to cash_doc.opcode_view, edit_cash_doc_path(cash_doc) %></td>
+    <td><%= cash_doc.run_view %></td>
+    <td><%= cash_doc.value %></td>
+    <td><%= link_to 'Удалить', cash_doc, :confirm => 'Вы уверены?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новый документ', new_cash_doc_path %>

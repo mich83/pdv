@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 22
+/!svn/ver/82/test/unit
+END
+user_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/1/test/unit/user_test.rb
+END
+debt_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/21/test/unit/debt_test.rb
+END
+item_doc_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/15/test/unit/item_doc_test.rb
+END
+stock_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/15/test/unit/stock_test.rb
+END
+good_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/6/test/unit/good_test.rb
+END
+interest_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/!svn/ver/6/test/unit/interest_test.rb
+END
+item_doc_rows_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/!svn/ver/15/test/unit/item_doc_rows_test.rb
+END
+price_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/10/test/unit/price_test.rb
+END
+price_type_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/!svn/ver/10/test/unit/price_type_test.rb
+END
+cash_doc_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/22/test/unit/cash_doc_test.rb
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/!svn/ver/1/test/unit/.gitkeep
+END
+goods_tag_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/24/test/unit/goods_tag_test.rb
+END
+expense_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/!svn/ver/81/test/unit/expense_test.rb
+END
+card_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/1/test/unit/card_test.rb
+END
+income_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/!svn/ver/82/test/unit/income_test.rb
+END
+tag_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/24/test/unit/tag_test.rb
+END
+rest_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/21/test/unit/rest_test.rb
+END

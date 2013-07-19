@@ -1,0 +1,32 @@
+<h1>Теги</h1>
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<%= link_to 'Новый тег', new_tag_path %>
+<table>
+  <tr>
+    <th width=40></th>
+    <th width=200></th>
+    <th></th>
+  </tr>
+
+<% @list.each do |group| %>
+	<tr>
+		<td colspan=3>
+		    <b><%= group[:key] %>
+		</td>
+	</tr>
+	<% group[:value].each do |tagref| %>
+	    <% tag = Tag.find(tagref[:id]) %>
+		<tr>
+		<td></td>
+		<td><%= link_to tag.name, edit_tag_path(tag) %></td>
+		<td><%= link_to 'Удалить', tag, :confirm => 'Вы уверены?', :method => :delete %></td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новый тег', new_tag_path %>

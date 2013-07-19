@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @stock.name %>
+</h2>
+
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
+
+<h3>Товары</h3>
+
+<select onchange='window.location.pathname = "/stocks/<%=@stock.id%>/"+this.value'>
+<option value=""></option>
+<% selected = if @price_type.nil? then nil else @price_type.id end %>
+<%= options_from_collection_for_select PriceType.all.collect, "id", "name", selected %>
+</select>
+<% path = "/stocks/"+@stock.id.to_s %>
+<% unless @price_type.nil? then path = path+"/"+@price_type.id.to_s end %>
+<a href ="<%=path%>.xls">Сохранить</a>
+<table>
+	<tr>
+	<th>Наименование</th>
+	<th>Остаток</th>
+	<th>Стоимость</th>
+<% if !@price_type.nil? then %>
+	<th>По типу цен <%= @price_type.name %></th>
+<% end %>
+	</tr>
+	<tr>
+	<td><b>Итого</b></th>
+	<td></td>
+	<td><b><%= @total %></td>
+<% if !@price_type.nil? then %>
+	<td><%= @price_total %></td>
+<% end %>
+	</tr>
+	
+<% @rests.each do |r| %>
+	<tr><td>
+		<%= r[:good] %>
+	</td>
+	<td>
+		<%= r[:quantity] %>
+	</td>
+<td>
+		<%= r[:sum] %>
+	</td>	
+<% if !@price_type.nil? then %>
+	<td><%= r[:by_price] %></td>
+<% end %>
+<% end %>
+	<tr>
+	<td><b>Итого</b></th>
+	<td></td>
+	<td><b><%= @total %></td>
+<% if !@price_type.nil? then %>
+	<td><%= @price_total %></td>
+<% end %>
+	</tr>
+
+</table>

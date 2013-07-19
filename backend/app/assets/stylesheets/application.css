@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+require ui.jqgrid
+
+tr:nth-of-type(0){
+background: #a52a2a;
+}
+div.ref
+{
+float:left;width:120px;display:inline;
+}
+div.doc
+{
+float:left;width:120px;display:inline;
+text-align:center; 
+border: 1px solid;
+}
+div.goods
+{
+	width:320px;
+}
+div.head
+{
+	font-weight:bold;
+	padding: 4px 0px;
+	background: #e6e6fa;
+}
+tr:nth-of-type(even),
+div.fields:nth-of-type(even) div.doc{
+background: #ffffff;
+}
+tr:nth-of-type(odd),
+div.fields:nth-of-type(odd) div.doc{
+background: #e6e6fa;
+}   
+tr:hover
+{
+background:#7fc7ff;
+}

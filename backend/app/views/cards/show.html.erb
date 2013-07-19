@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash[:error] %></p>
+<p>
+  <b>Номер карты:</b>
+  <%= @card.cardno %>
+</p>
+
+<p>
+  <b>Тип клиента:</b>
+  <%= @card.show_type %>
+</p>
+
+<p>
+  <b>Фамилия:</b>
+  <%= @card.lastname %>
+</p>
+
+<p>
+  <b>Имя:</b>
+  <%= @card.name %>
+</p>
+
+
+<p>
+  <b>Отчество:</b>
+  <%= @card.surname %>
+</p>
+
+<p>
+  <b>Дата рождения:</b>
+  <%= @card.birthdate %>
+</p>
+<p>
+  <b>Телефон:</b>
+  <%= @card.phone %>
+</p>
+<p>
+  <b>Эл. почта:</b>
+  <%= @card.email %>
+</p>
+
+<p>
+  <b>Пол:</b>
+  <%= case @card.sex when "M" then "Мужской" when "F" then "Женский" else "" end %>
+</p>
+
+
+<p>
+  <b>Адрес:</b>
+  <%= @card.address %>
+</p>
+
+<p>
+  <b>Интересы: </b>
+  <% for interest in @card.interests %>
+  <p> <%= interest.value %> </p>
+  <% end %>
+  
+</p>
+<%= link_to 'Изменить', edit_card_path(@card) %> |
+<%= link_to 'Назад', cards_path %>

@@ -1,0 +1,4 @@
+class GoodsTag < ActiveRecord::Base
+  belongs_to :good
+  belongs_to :tag
+end

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p> <b> <%= @item_doc.opcode_view %> № <%= @item_doc.id %> от <%= @item_doc.created_at.localtime %> </b></p>
+<p>
+<b>Описание</b>
+<%= @item_doc.description %>
+</p>
+<p>
+  <b>Склад</b>
+  <%= unless @item_doc.stock.nil? then @item_doc.stock.name end%>
+</p>
+
+<% unless @item_doc.card.nil? %>
+<p>
+  <b>Контрагент</b>
+  <%= @item_doc.card.full_name %>
+</p>
+<% end %>
+
+<p>
+  <b>Проведен</b>
+  <%= @item_doc.run_view %>
+</p>
+
+
+<p>
+  <b>Наличная оплата</b>
+  <%= @item_doc.cash_view %>
+</p>
+
+<p>
+  <b>Тип цен</b>
+  <%= unless @item_doc.price_type.nil? then @item_doc.price_type.name end %>
+</p>
+<p>
+	<b> Процент комиссии </b>
+	<%= @item_doc.expense %>
+</p>
+<p>
+	<b> Пользователь </b>
+	<%= unless @item_doc.user.nil? then @item_doc.user.name end %>
+</p>
+<p>
+	<b> Период </b>
+	<%= @item_doc.period %>
+</p>
+<table>
+<tr><th>Товар</th><th>Цена</th><th>Количество</th><th>Сумма</th></tr>
+<% for row in @item_doc.item_doc_rows do %>
+<tr><td><%= unless row.good.nil? then row.good.name end %></td><td><%= row.price %></td><td><%= row.quantity %></td><td><%= row.sum %></td></tr>
+<% end %>
+</table>
+<p><b>Итого: <%=@item_doc.total%> руб </b></p>
+<%= unless @item_doc.run then link_to 'Изменить', edit_item_doc_path(@item_doc) end %> |
+<%= link_to 'Назад', item_docs_path %>

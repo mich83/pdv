@@ -1,0 +1,15 @@
+class CreateItemDocs < ActiveRecord::Migration
+  def change
+    create_table :item_docs do |t|
+      t.references :stock
+      t.references :card
+      t.boolean :run
+      t.integer :opcode
+	  t.references :price_type
+      t.timestamps
+    end
+    add_index :item_docs, :stock_id
+    add_index :item_docs, :card_id
+	add_index :item_docs, :price_type_id
+  end
+end

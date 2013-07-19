@@ -1,0 +1,10 @@
+# -*- encoding : utf-8 -*-
+class ItemDocsAddPeriod < ActiveRecord::Migration
+  def up
+	add_column :item_docs, :period, :date
+  end
+
+  def down
+	remove_column :item_docs, :period
+  end
+end

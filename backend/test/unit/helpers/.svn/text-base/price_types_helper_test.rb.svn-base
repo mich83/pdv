@@ -1,0 +1,4 @@
+require 'test_helper'
+
+class PriceTypesHelperTest < ActionView::TestCase
+end

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Склад:</b>
+  <%= @expense.stock.name %>
+</p>
+<p>
+  <b>Период:</b>
+  <%= @expense.period %>
+</p>
+<p>
+  <b>Комментарий:</b>
+  <%= @expense.comment %>
+</p>
+<p>
+  <b>Сумма:</b>
+  <%= @expense.value %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

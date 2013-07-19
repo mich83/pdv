@@ -1,0 +1,6 @@
+<h1>Изменить документ</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Показать', @cash_doc %> |
+<%= link_to 'Назад', cash_docs_path %>

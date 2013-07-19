@@ -1,0 +1,41 @@
+<% javascript 'cash_docs' %>
+<% javascript 'update2' %>
+<%= form_for(@cash_doc) do |f| %>
+  <% if @cash_doc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cash_doc.errors.count, "error") %> prohibited this cash_doc from being saved:</h2>
+
+      <ul>
+      <% @cash_doc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    Вид операции
+    <%= f.select :opcode, CashDoc.opcodes, {} ,{:style=>'position:relative;left:5px;width:400px;', :onchange=>"UpdateVisibility()"} %>
+  </div>
+  <div id = "client_div" class="field">
+    Клиент
+	<% cardlist = {} %>
+	<% unless @cash_doc.card.nil? then cardlist = {@cash_doc.card.full_name => @cash_doc.card.id} end %>
+    <%= f.select :card_id, cardlist, {:include_blank=>true} ,{:style=>'position:relative;left:52px;width:400px;'} %>
+  </div>
+  
+  <div class="field">
+    Сумма
+    <%= f.text_field :value, :size=>6, :pattern => "[0-9.]+$", :style=>"position:relative;left:55px;width:400px;" %>
+  </div>
+   <div class="field">
+    Проведен
+    <%= f.check_box :run %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+  
+  
+<% end %>

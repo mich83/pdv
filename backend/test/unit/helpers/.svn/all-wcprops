@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/!svn/ver/82/test/unit/helpers
+END
+interests_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6/test/unit/helpers/interests_helper_test.rb
+END
+users_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/1/test/unit/helpers/users_helper_test.rb
+END
+price_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/!svn/ver/17/test/unit/helpers/price_helper_test.rb
+END
+sessions_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/1/test/unit/helpers/sessions_helper_test.rb
+END
+price_types_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/10/test/unit/helpers/price_types_helper_test.rb
+END
+item_docs_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/15/test/unit/helpers/item_docs_helper_test.rb
+END
+stocks_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/15/test/unit/helpers/stocks_helper_test.rb
+END
+cash_docs_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/22/test/unit/helpers/cash_docs_helper_test.rb
+END
+incomes_and_expenses_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/82/test/unit/helpers/incomes_and_expenses_helper_test.rb
+END
+parse_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/!svn/ver/27/test/unit/helpers/parse_helper_test.rb
+END
+expenses_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/81/test/unit/helpers/expenses_helper_test.rb
+END
+goods_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/6/test/unit/helpers/goods_helper_test.rb
+END
+cards_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/1/test/unit/helpers/cards_helper_test.rb
+END
+tags_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/24/test/unit/helpers/tags_helper_test.rb
+END

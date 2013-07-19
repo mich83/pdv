@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/83/app/views/incomes_and_expenses
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/83/app/views/incomes_and_expenses/index.html.erb
+END
+by_period.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/82/app/views/incomes_and_expenses/by_period.html.erb
+END

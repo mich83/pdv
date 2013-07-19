@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/!svn/ver/82/app/helpers
+END
+interests_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/6/app/helpers/interests_helper.rb
+END
+cash_docs_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/!svn/ver/22/app/helpers/cash_docs_helper.rb
+END
+price_types_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/!svn/ver/10/app/helpers/price_types_helper.rb
+END
+incomes_and_expenses_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/82/app/helpers/incomes_and_expenses_helper.rb
+END
+expenses_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/81/app/helpers/expenses_helper.rb
+END
+cards_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/1/app/helpers/cards_helper.rb
+END
+tags_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/24/app/helpers/tags_helper.rb
+END
+users_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/1/app/helpers/users_helper.rb
+END
+price_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/17/app/helpers/price_helper.rb
+END
+application_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/!svn/ver/32/app/helpers/application_helper.rb
+END
+stocks_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/!svn/ver/15/app/helpers/stocks_helper.rb
+END
+item_docs_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/!svn/ver/15/app/helpers/item_docs_helper.rb
+END
+sessions_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/32/app/helpers/sessions_helper.rb
+END
+parse_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/27/app/helpers/parse_helper.rb
+END
+goods_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/6/app/helpers/goods_helper.rb
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/78/app/views/price_types
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/10/app/views/price_types/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/!svn/ver/67/app/views/price_types/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/!svn/ver/10/app/views/price_types/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/78/app/views/price_types/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/!svn/ver/10/app/views/price_types/_form.html.erb
+END

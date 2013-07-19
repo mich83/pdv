@@ -1,0 +1,4 @@
+require 'test_helper'
+
+class CashDocsHelperTest < ActionView::TestCase
+end

@@ -1,0 +1,51 @@
+<% javascript 'goods' %>
+<%= nested_form_for(@good) do |f| %>
+  <% if @good.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@good.errors.count, "error") %> prohibited this good from being saved:</h2>
+
+      <ul>
+      <% @good.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Наименование" %><br />
+    <%= f.text_field :name, :size => 150%>
+  </div>
+  <div class="field">
+    <%= f.label "Артикул" %><br />
+    <%= f.text_field :artno %>
+  </div>
+  <div class="field">
+    <%= f.label "Штрихкод" %><br />
+    <%= f.text_field :barcode %> <button type="button" onclick="javascript:MakeBarCode(jQuery('#good_barcode')[0],'<%= @good.id %>')">Создать штрихкод</button>
+  </div>
+  
+  <fieldset style="width:350px">
+  <legend>Цены</legend>
+  <%= f.fields_for :prices do |int_form| %>
+  <%= int_form.collection_select :price_type_id, PriceType.all.collect, :id, :name %>
+  <%= int_form.text_field :price, :size=>6, :pattern => "[0-9.]+$" %>
+  <%= int_form.link_to_remove "Удалить"%>
+  <% end %>
+  <%= f.link_to_add "Добавить", :prices %>
+   
+  </fieldset>
+  <fieldset style="width:350px">
+  <legend>Теги</legend>
+  <%= f.fields_for :goods_tags do |tag_form| %>
+  <%= tag_form.collection_select :tag_id, Tag.all.collect, :id, :name %>
+  <%= tag_form.link_to_remove "Удалить" %>
+  <% end %>
+  <%= f.link_to_add "Добавить", :goods_tags %>
+  </fieldset>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+  
+ 
+<% end %>

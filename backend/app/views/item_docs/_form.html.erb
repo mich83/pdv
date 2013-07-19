@@ -1,0 +1,92 @@
+<% javascript 'item_docs_form' %>
+<% javascript 'update' %>
+
+<%= nested_form_for(@item_doc) do |f| %>
+  <% if @item_doc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item_doc.errors.count, "error") %> prohibited this item_doc from being saved:</h2>
+
+      <ul>
+      <% @item_doc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    Вид операции
+    <%= f.select :opcode, ItemDoc.opcodes, {} ,{:style=>'position:relative;left:85px;width:400px;', :onchange=>"UpdateVisibility()"} %>
+  </div>
+  <div class="filed">
+	Описание <%= f.text_field :description, :size=>30 , :style=>'position:relative;left:113px;width:400px;' %>
+  </div>
+  <div class="field">
+    Склад 
+    <%= f.collection_select :stock_id, Stock.all.collect, :id, :name, {:include_blank=> true} ,{:style=>'position:relative;left:138px;width:400px;'} %>
+  </div>
+  <div id = "client_div" class="field">
+    Клиент
+	<% cardlist = {} %>
+	<% unless @item_doc.card.nil? then cardlist = {@item_doc.card.full_name => @item_doc.card.id} end %>
+    <%= f.select :card_id, cardlist, {:include_blank=>true} ,{:style=>'position:relative;left:132px;width:400px;'} %>
+  </div>
+  <div id = "stock_dest_div" class="field">
+    Склад получатель
+    <%= f.collection_select :stock_dest_id, Stock.all.collect, :id, :name, {:include_blank => true}, {:style=>'position:relative;left:55px;width:400px;'} %>
+  </div>
+  <div class="field">
+    Тип цен
+	<%= f.collection_select :price_type_id, PriceType.all.collect, :id, :name, {} ,{:style=>'position:relative;left:124px;width:400px;', :onchange=>'PriceTypeOnChange();'} %>
+  </div>
+  <div class="field">
+    Процент комиссии
+	<%= f.number_field :expense ,{:style=>'position:relative;left:52px;width:400px;'} %>
+  </div>
+  <div class="field">
+	Период
+	<div style="position:relative;left:128px;display:inline;"> <%= date_select "item_doc", "period", :order => [:month, :year]  %></div>
+   </div>
+    <div class="field">
+    Проведен
+    <%= f.check_box :run %> Наличная оплата <%= f.check_box :cash %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %> 
+	<button onclick = "javascript:UpdatePrices(); return false;">Обновить цены в справочнике</button>
+  </div>
+    <div class="doc head goods"> Товар </div>
+	<div class="doc head"> Цена </div>
+	<div class="doc head"> Количество </div>
+	<div class="doc head"> Сумма </div>
+	<div style="clear:both;display:block;overflow:hidden;"></div>
+  <%= f.fields_for :item_doc_rows do |row_form| %>
+  <% rowgoodslist = {} %>
+  <% if row_form.object.good.nil? then goodname="" else goodname= row_form.object.good.name end %>
+  <div class="doc goods"><%= row_form.hidden_field :good_id, :class=>"item"  %> <input type="text" disabled="disabled" style="width:280px;background-color:#FFFFFF;" value="<%= goodname %>"> <%= row_form.button "...", :style=>"width:20px;padding:0px;",:onclick=>"EditItem(this);",:type => "button" %></div>
+  <div class="doc"><%= row_form.text_field :price, :size=>6, :class=>"price", :pattern => "[0-9.]+$", :onchange=>"PriceOnChange(this);" %></div>
+  <div class="doc"><%= row_form.text_field :quantity, :size=>6, :pattern => "[0-9.]+$", :onchange=>"QuantityOnChange(this);" %></div>
+  <div class="doc"><%= row_form.text_field :sum, :size=>6, :pattern => "[0-9.]+$",:onchange=>"SumOnChange(this);",:class=>"sum" %></div>
+  <div class="ref"><%= row_form.link_to_remove "Удалить"%></div>
+  <div style="clear:both;display:block;overflow:hidden;"></div>
+  <% end %>  
+  
+  <%= f.link_to_add "Добавить", :item_doc_rows %>
+  <div>
+  <b>Итого: <label id="total"><%= @item_doc.total %></label> руб. </b></div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>
+
+<div id="file-uploader">		
+	<noscript>			
+		<p>Please enable JavaScript to use file uploader.</p>
+		<!-- or put a simple form for upload here -->
+	</noscript>         
+</div>
+
+<div id="dialog" title="Выбор товара">
+</div>
+
+<div id="dialog2" title="Загрузка файла">
+</div>

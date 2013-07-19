@@ -1,0 +1,24 @@
+﻿<h1>Типы цен</h1>
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<%= link_to 'Новый тип цен', new_price_type_path %>
+<table>
+  <tr>
+    <th>Наименование</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @price_types.each do |price_type| %>
+  <tr>
+    <td><%= link_to price_type.name, price_type %></td>
+    <td><%= link_to 'Изменить', edit_price_type_path(price_type) %></td>
+    <td><%= link_to 'Удалить', price_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новый тип цен', new_price_type_path %>

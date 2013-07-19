@@ -1,0 +1,43 @@
+<% javascript 'stocks' %>
+<h1>Склады</h1>
+
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<%= link_to 'Новый склад', new_stock_path %>
+<table>
+  <tr>
+    <th>Наименование</th>
+	<th>Себестоимость</th>
+	<th></th>
+    <th></th>
+    <th>Тип цен</th>
+    <th>Стоимость по типу цен</th>
+  </tr>
+<% options = options_from_collection_for_select(PriceType.all, "id", "name") %>
+<% total_cost = 0 %>
+<% @stocks.each do |stock| %>
+  <tr>
+    <td><%= link_to stock.name, edit_stock_path(stock) %></td>
+	<td><%= stock.value %></td>
+	<% total_cost = total_cost + if stock.value.nil? then 0 else stock.value end %>
+	<td><%= link_to 'Просмотр', stock %>
+    <td><%= link_to 'Удалить', stock, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= select_tag "pricetype_"+stock.id.to_s, options, :include_blank => true, :onchange=> 'javascript:OnSelectPriceType(this)' %></td>
+	<td><%= label_tag "val", "0", :id=>"value_"+stock.id.to_s %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td>Итого</th>
+	<th><%= total_cost %> </th>
+	<th></th>
+    <th></th>
+    <th><%= select_tag "pricetype_all", options, :include_blank => true, :onchange=> 'javascript:OnSelectPriceType(this)' %></th>
+    <th><%= label_tag "val", "0", :id=>"value_all"%></th>
+  </tr>
+<td>
+</table>
+
+<br />
+
+<%= link_to 'Новый склад', new_stock_path %>

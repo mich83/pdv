@@ -1,0 +1,15 @@
+# -*- encoding : utf-8 -*-
+class AddFieldsToUser < ActiveRecord::Migration
+  def up
+	change_table :users do |t|
+		t.boolean :robot
+		t.references :stock
+		t.references :price_type
+	end
+  end
+  def down
+	remove_column :users, :robot
+	remove_column :users, :stock_id
+	remove_column :users, :price_type_id
+  end
+end

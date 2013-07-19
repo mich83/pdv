@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/!svn/ver/1/app/views/sessions
+END
+destroy.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/!svn/ver/1/app/views/sessions/destroy.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/1/app/views/sessions/new.html.erb
+END
+create.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/!svn/ver/1/app/views/sessions/create.html.erb
+END

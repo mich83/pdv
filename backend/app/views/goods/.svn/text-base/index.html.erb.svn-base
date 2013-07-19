@@ -1,0 +1,63 @@
+<p>
+<%= link_to 'Загрузка товаров', '/goods/load' %>
+<select onchange='window.location.pathname = "/goods/tag/"+this.value'>
+<option value='0'>Без тегов</option>
+
+<% 	@tags = Tag.all %>
+<% 	opts = Hash.new %>
+<%	@tags.each do |tag| %>
+<%	group = if tag.parent.nil? then "Без группы" else tag.parent.name end %>
+<%	if !(opts.key?(group)) then %>
+<%	   opts[group] = Array.new %>
+<%	end %>
+<%	opts[group] << [tag.name, tag.id] %>
+<%  end %>
+<%  opts.each do |key,value| value.sort! {|a,b| a[0] <=> b[0]} end %>
+<%= grouped_options_for_select(opts,@current_tag) %>
+
+</select>
+</p>
+<p> Поиск <%= form_tag '/search' %>
+<%= text_field_tag 'search' %>
+<%= submit_tag 'Поиск' %>
+</form>
+<p> <%= link_to 'Новый товар', new_good_path %> </p>
+<h1>Товары</h1>
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<table>
+  <tr>
+    <th>Наименование</th>
+	<th>ШК</th>
+	<th>Остаток</th>
+	<th>Стоимость</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% total = 0 %>
+<% @goods.each do |good| %>
+  <tr>
+    <td><%= link_to good.name, good %></td>
+	<td align="center"><% if (!good.barcode.nil?) %> <% if (!good.barcode.empty?) %> V <% end %><% end %></td>
+	<td><%= good.get_rest %></td>
+	<% value = good.get_value %>
+	<td><%= value %></td>
+	
+	<% total = total + value %>
+    <td><%= link_to 'Изменить', edit_good_path(good) %></td>
+    <td><%= link_to 'Удалить', good, :confirm => 'Вы уверены?', :method => :delete %></td>
+  </tr>
+<% end %>
+  <tr>
+    <th>Итого</th>
+	<th></th>
+	<th><%= total %></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+
+<br />
+
+<%= link_to 'Новый товар', new_good_path %>

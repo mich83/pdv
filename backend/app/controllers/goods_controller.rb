@@ -1,0 +1,146 @@
+# -*- encoding : utf-8 -*-
+class GoodsController < ApplicationController
+  # GET /goods
+  # GET /goods.json
+  def search
+	@goods = Good.where('LOWER(name) like ?', '%'+params[:search].downcase+'%')
+	respond_to do |format|
+		format.json {render :json => {:items=>@goods, :target => params[:target]}}
+		format.html {render :action=> "index"}
+	end
+  end
+  def load
+	respond_to do |format|
+		format.html {render :action=>'load'}
+	end
+  end
+  def index
+    @goods = Good.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @goods }
+    end
+  end
+  def tag_index
+	 if params[:tag] == "0"
+		@goods = Good.where('not id in (select good_id from goods_tags)')
+	 else
+		@goods = GoodsTag.where(:tag_id=>params[:tag]).map { |g| g.good }
+	 end
+	 @current_tag = params[:tag]
+	 respond_to do |format|
+		format.html {render :action => "index"}
+		format.json {render :json => {:items => @goods, :target =>params[:target]}}
+	 end
+  end
+  # GET /goods/1
+  # GET /goods/1.json
+  def show
+    @good = Good.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @good }
+    end
+  end
+
+  # GET /goods/new
+  # GET /goods/new.json
+  def new
+    @good = Good.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render :json => @good }
+    end
+  end
+
+  # GET /goods/1/edit
+  def edit
+    @good = Good.find(params[:id])
+  end
+  
+  # POST /goods/rename.json
+  def rename
+	 @good = Good.find(params[:id])
+	 @good.name = params[:new_name]
+	 @good.save
+     respond_to do |format|
+       format.json { render :json => @good }
+     end
+  end
+  
+  # POST /goods
+  # POST /goods.json
+  def create
+    create_tags = params[:create_tags]
+	@good = Good.new(params[:good])
+	
+	if @good.save
+		if create_tags == '1'
+			values = params[:good][:name].split(':')
+			name = values[values.size-1]
+			lasttag = values.size-2
+			for i in 0..lasttag
+				tag_name = values[i]
+				tag = Tag.find_or_create_by_name(tag_name)
+				tag.save
+				gt = GoodsTag.new(:tag=>tag,:good=>@good)
+				gt.save
+			end
+		end
+	    respond_to do |format|
+			format.html { redirect_to :action=>"index" }
+			format.json { render :json => @good, :status => :created, :location => @good }
+		end
+    else
+		respond_to do |format|
+			format.html { render :action => "new" }
+			format.json { render :json => @good.errors, :status => :unprocessable_entity }
+		end
+    end
+  end
+
+  # PUT /goods/1
+  # PUT /goods/1.json
+  def update
+    @good = Good.find(params[:id])
+
+    respond_to do |format|
+      if @good.update_attributes(params[:good])
+        format.html { redirect_to :action => "index" }
+        format.json { head :no_content }
+      else
+        format.html { render :action => "edit" }
+        format.json { render :json => @good.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /goods/1
+  # DELETE /goods/1.json
+  def destroy
+    @good = Good.find(params[:id])
+    @good.destroy
+	flash[:error] = @good.errors[:base]
+    respond_to do |format|
+      format.html { redirect_to goods_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  def get_rest
+    user = User.find(session[:user_id])
+	pricetype = user.price_type
+	stock = user.stock
+	pt_id = pricetype.id
+	s_id = stock.id
+	qresult = Good.select('goods.id,goods.name,goods.artno,goods.barcode,r.qty, p.price').joins("LEFT OUTER JOIN (select good_id, sum(quantity) as qty from rests where stock_id = #{s_id} group by good_id ) as r on r.good_id = goods.id").joins("LEFT OUTER JOIN (select good_id, price from prices where price_type_id = #{pt_id}) as p on p.good_id = goods.id")
+	result = []
+	qresult.each do |r|
+		result.push({:id=>r.id, :name=> r.name, :artno => r.artno, :barcode =>r.barcode, :qty => r.qty, :price => r.price, :tags => GoodsTag.select("t.id").where(:good_id=>r.id).joins("INNER JOIN tags as t on t.id = goods_tags.tag_id")})
+	end
+	render :json => result
+  end
+end

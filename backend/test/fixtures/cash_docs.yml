@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  card: 
+  opcode: 1
+  value: 9.99
+
+two:
+  card: 
+  opcode: 1
+  value: 9.99

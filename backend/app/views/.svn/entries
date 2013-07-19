@@ -1,0 +1,73 @@
+10
+
+dir
+100
+http://svn.oblast55.ru/app/views
+http://svn.oblast55.ru
+
+
+
+2013-05-04T12:22:35.371230Z
+83
+michael
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+337a96fc-1eac-435e-808a-f730f1aea163
+
+interests
+dir
+
+cash_docs
+dir
+
+price_types
+dir
+
+incomes_and_expenses
+dir
+
+expenses
+dir
+
+cards
+dir
+
+tags
+dir
+
+layouts
+dir
+
+users
+dir
+
+price
+dir
+
+stocks
+dir
+
+item_docs
+dir
+
+sessions
+dir
+
+parse
+dir
+
+goods
+dir
+

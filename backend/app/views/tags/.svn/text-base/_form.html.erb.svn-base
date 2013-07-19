@@ -1,0 +1,24 @@
+<%= form_for(@tag) do |f| %>
+  <% if @tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+      <% @tag.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label "Наименование" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+	<%= f.label "Родитель" %> <br />
+	<%= f.collection_select :parent_id, Tag.all.collect, :id, :name, {:include_blank => true} %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>

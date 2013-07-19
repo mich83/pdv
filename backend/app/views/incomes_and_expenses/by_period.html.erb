@@ -1,0 +1,28 @@
+<% javascript 'incomes_and_expenses' %>
+<h1>Прибыль</h1>
+<table>
+<tr>
+<th> Склад </th>
+<th> Документ </th>
+<th> Сумма </th>
+<th> Комментарий </th>
+</tr>
+<% @data.each do |stock, data| %>
+<tr>
+<td><%=stock.name %></td>
+<td></td>
+<td><%=data[:value] %></td>
+<td></td>
+</tr>
+<% data[:rows].each do |row| %>
+<tr>
+<td></td>
+<td> <a href="javascript:OpenDoc('<%=url_for(row["ref"])%>')"><%=row["name"]%></a></td>
+<td> <%=row["value"]%></td>
+<td> <%=row["comment"]%></td>
+</tr>
+<% end %>
+<% end %> 
+
+<div id="dialog" title="Документ">
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discount</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield(:head) %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+Меню:
+<% if session[:user_id] then %>
+<% uid = session[:user_id] %>
+<% user = User.find_by_id uid %>
+<% unless user.robot %>
+<%= user.name %>
+<%= link_to "Покупатели", buyers_url %>
+<%= link_to "Поставщики", suppliers_url %>
+<%= link_to "Товары", goods_url %>
+<%= link_to "Теги", tags_url %>
+<%= link_to "Типы цен", price_types_url %>
+<%= link_to "Склады", stocks_url %>
+<%= link_to "Товарные документы", item_docs_url %>
+<%= link_to "Расходы", expenses_url %>
+<%= link_to "Кассовые документы", cash_docs_url %>
+<%= link_to "Пользователи", users_url %>
+<%= link_to "Прибыль", incomes_and_expenses_url %>
+<% end %>
+<%= link_to "Выход", logout_url %>
+<% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

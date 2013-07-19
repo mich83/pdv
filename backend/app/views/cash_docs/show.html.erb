@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Вид операции</b>
+  <%= @cash_doc.opcode_view %>
+</p>
+
+<p>
+  <b>Клиент:</b>
+  <%= unless @cash_doc.card.nil? then @cash_doc.card.full_name end %>
+</p>
+
+<p>
+  <b>Сумма:</b>
+  <%= @cash_doc.value %>
+</p>
+
+<p>
+	<b>Проведен:</b>
+	<%= @cash_doc.run_view %>
+</p>
+
+
+<%= unless @cash_doc.run then link_to 'Изменить', edit_cash_doc_path(@cash_doc) end %> |
+<%= link_to 'Назад', cash_docs_path %>

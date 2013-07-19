@@ -1,0 +1,24 @@
+﻿<p id="notice"><%= notice %></p>
+<h1> Тип цен </h1>
+<p>
+  <b>Наименование:</b>
+  <%= @price_type.name %>
+</p>
+
+
+<%= link_to 'Изменить', edit_price_type_path(@price_type) %> |
+<%= link_to 'Назад', price_types_path %>
+<br><br>
+<table>
+<tr>
+<th>Товар</th>
+<th>Цена</th>
+</tr>
+<% @prices.each do |p| %>
+<tr>
+	<td> <%= link_to p.good.name, edit_good_path(p.good) %></td>
+	<td> <%= p.price %></td>
+</tr>
+<% end %>
+</table>
+	

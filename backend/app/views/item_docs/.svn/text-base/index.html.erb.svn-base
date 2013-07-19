@@ -1,0 +1,49 @@
+<h1>Товарные документы</h1>
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+<%= link_to 'Новый документ', new_item_doc_path %>
+<br>Фильтр <br>
+<%= form_tag '/item_docs/filter' %>
+Период с <%= date_select 'filter', 'start_date', :prefix=>'start_date', :order=> [:day,:month,:year] %> по <%= date_select 'filter', 'end_date', :prefix=>'end_date', :order=> [:day,:month,:year] %><br>
+Вид операции <%= select 'filter', 'opcode', ItemDoc.opcodes, :include_blank => true %>
+Склад <%= collection_select 'filter','stock', Stock.all.collect, :id, :name, :include_blank =>true %>
+<%= submit_tag %>
+</form>
+<table>
+  <tr>
+	<th></th>
+	<th>Дата</th>
+	<th>Вид операции</th>
+    <th>Проведен</th>
+	<th>Склад</th>
+    <th>Клиент</th>
+	<th>Описание</th>
+	<th>Тип цен</th>
+	<th>Сумма</th>
+	<th>Себестоимость</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @item_docs.each do |item_doc| %>
+  <tr>
+    <td><%= link_to '<img src="/assets/get.png" title ="Загрузить">'.html_safe, '/item_docs/'+item_doc.id.to_s+'.xls' %></td>
+	<td><%= item_doc.created_at.localtime.strftime("%d.%m.%y") %> </td>
+	<td><%= if item_doc.run then link_to item_doc.opcode_view, item_doc else link_to item_doc.opcode_view, edit_item_doc_path(item_doc) end %></td>
+    <td><%= item_doc.run_view %></td>
+	<td><%= if item_doc.stock.nil? then '' else item_doc.stock.name end %></td>
+    <td><%= item_doc.client_view %></td>
+	<td><%= item_doc.description %></td>
+	<td><%= item_doc.price_type_view %></td>
+	<td><%= item_doc.get_sum %></td>
+	<td><%= item_doc.get_cost %></td>
+    <td><%= if item_doc.run then link_to '<img src="/assets/add_doc.gif" title ="Скопировать">'.html_safe, '/item_docs/copy/'+item_doc.id.to_s else link_to '<img src="/assets/doc_delete.jpg" title ="Удалить">'.html_safe, item_doc, :confirm => 'Вы уверены?', :method => :delete end %> </td>
+	<td><%= if item_doc.run then link_to '<img src="/assets/storno.png" title ="Создать сторно">'.html_safe, '/item_docs/invert/'+item_doc.id.to_s end %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новый документ', new_item_doc_path %>

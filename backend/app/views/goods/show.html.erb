@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Наименование:</b>
+  <%= @good.name %>
+</p>
+<p>
+  <b>Артикул:</b>
+  <%= @good.artno %>
+</p>
+<p>
+  <b>Штрихкод:</b>
+  <%= @good.barcode %>
+</p>
+<p>
+  <b>Цены: </b>
+  <% for price in @good.prices %>
+  <p> <%= price.price_type.name %> <%= price.price %></p>
+  <% end %>
+</p>
+<p>
+  <b>Теги: </b>
+  <% for tag in @good.goods_tags %>
+  <p> <%= tag.tag.name %></p>
+  <% end %>
+</p>
+<p>
+	<b> Остатки </b>
+	<% Rest.select("stock_id,sum(quantity) as q ,sum(sum) as s").group("stock_id").where(:good_id => @good.id).each do |r| %>
+	<p>
+	<%= r.stock.name %> <%= r.q %> шт. <%= r.s %> руб.
+	</p>
+	<% end %>
+</p>
+<%= link_to 'Изменить', edit_good_path(@good) %> |
+<%= link_to 'Назад', :back %>

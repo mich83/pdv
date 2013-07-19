@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  good: 
+  stock: 
+  item_doc: MyString
+  references: MyString
+  quantity: 9.99
+
+two:
+  good: 
+  stock: 
+  item_doc: MyString
+  references: MyString
+  quantity: 9.99

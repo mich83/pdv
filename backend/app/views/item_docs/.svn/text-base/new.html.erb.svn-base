@@ -1,0 +1,9 @@
+<h1>Новый документ</h1>
+
+<% unless flash[:error].nil? %>
+<p id="error_explanation"><%= flash[:error] %></p>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', item_docs_path %>

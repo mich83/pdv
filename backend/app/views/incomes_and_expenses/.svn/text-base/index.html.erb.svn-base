@@ -1,0 +1,12 @@
+<h1>Прибыль</h1>
+<table>
+<tr>
+<th> Период </th>
+<th> Сумма </th>
+</tr>
+<% @data.each do |row| %>
+<tr>
+<td><%=link_to row["period"].to_s, incomes_and_expenses_url+"/"+row["period"].to_s %></td>
+<td><%=row["value"]%></td>
+</tr>
+<% end %> 

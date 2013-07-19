@@ -1,0 +1,19 @@
+Вход в систему:
+
+<div class="login_form">
+<%= form_tag '/login' do %>
+<fieldset>
+<div> 
+<label for="name">Имя</label>
+<%= text_field_tag :name, params[:name] %>
+</div>
+<div>
+<label for="password">Пароль</label>
+<%= password_field_tag :password, params[:password] %>
+</div>
+<div>
+<%= submit_tag "Вход" %>
+</div>
+</fieldset>
+<% end %>
+</div>

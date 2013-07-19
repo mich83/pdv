@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/!svn/ver/82/test/fixtures
+END
+interests.yml
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/6/test/fixtures/interests.yml
+END
+prices.yml
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/!svn/ver/10/test/fixtures/prices.yml
+END
+cash_docs.yml
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/22/test/fixtures/cash_docs.yml
+END
+price_types.yml
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/!svn/ver/10/test/fixtures/price_types.yml
+END
+goods_tags.yml
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/!svn/ver/24/test/fixtures/goods_tags.yml
+END
+expenses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/!svn/ver/81/test/fixtures/expenses.yml
+END
+cards.yml
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/1/test/fixtures/cards.yml
+END
+item_doc_rows.yml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/!svn/ver/15/test/fixtures/item_doc_rows.yml
+END
+incomes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/!svn/ver/82/test/fixtures/incomes.yml
+END
+tags.yml
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/24/test/fixtures/tags.yml
+END
+rests.yml
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/21/test/fixtures/rests.yml
+END
+debts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/21/test/fixtures/debts.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/1/test/fixtures/users.yml
+END
+stocks.yml
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/!svn/ver/15/test/fixtures/stocks.yml
+END
+item_docs.yml
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/15/test/fixtures/item_docs.yml
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/!svn/ver/1/test/fixtures/.gitkeep
+END
+goods.yml
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/!svn/ver/6/test/fixtures/goods.yml
+END

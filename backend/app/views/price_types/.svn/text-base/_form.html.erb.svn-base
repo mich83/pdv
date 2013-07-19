@@ -1,0 +1,21 @@
+﻿<%= form_for(@price_type) do |f| %>
+  <% if @price_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@price_type.errors.count, "error") %> prohibited this price_type from being saved:</h2>
+
+      <ul>
+      <% @price_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Наименование
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>

@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/!svn/ver/97/db/migrate
+END
+20120622104744_create_expenses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/81/db/migrate/20120622104744_create_expenses.rb
+END
+20130504093808_add_comment_to_income.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/82/db/migrate/20130504093808_add_comment_to_income.rb
+END
+20120302092538_add_fields_to_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/33/db/migrate/20120302092538_add_fields_to_user.rb
+END
+20120130150010_create_interests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6/db/migrate/20120130150010_create_interests.rb
+END
+20120128154646_add_fields_to_card_01.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/1/db/migrate/20120128154646_add_fields_to_card_01.rb
+END
+20130127081614_item_docs_add_period.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/82/db/migrate/20130127081614_item_docs_add_period.rb
+END
+20130127081038_expense_add_period.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/82/db/migrate/20130127081038_expense_add_period.rb
+END
+20120216055940_create_item_doc_rows.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/15/db/migrate/20120216055940_create_item_doc_rows.rb
+END
+20120216041415_create_stocks.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/15/db/migrate/20120216041415_create_stocks.rb
+END
+20120217060943_create_rests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/21/db/migrate/20120217060943_create_rests.rb
+END
+20120128170931_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/1/db/migrate/20120128170931_create_users.rb
+END
+20120130162735_add_prices_to_goods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6/db/migrate/20120130162735_add_prices_to_goods.rb
+END
+20130127093623_item_docs_add_userinfo.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/82/db/migrate/20130127093623_item_docs_add_userinfo.rb
+END
+20120229040631_add_stock_to_item_doc.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/26/db/migrate/20120229040631_add_stock_to_item_doc.rb
+END
+20120423093721_add_parent_to_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/58/db/migrate/20120423093721_add_parent_to_tag.rb
+END
+20120217093610_add_cash_ref_to_debts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/22/db/migrate/20120217093610_add_cash_ref_to_debts.rb
+END
+20120215082239_create_prices.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/10/db/migrate/20120215082239_create_prices.rb
+END
+20120217093513_create_cash_docs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/22/db/migrate/20120217093513_create_cash_docs.rb
+END
+20120129083442_create_first_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/1/db/migrate/20120129083442_create_first_user.rb
+END
+20120228090400_create_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/24/db/migrate/20120228090400_create_tags.rb
+END
+20120228090507_create_goods_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/24/db/migrate/20120228090507_create_goods_tags.rb
+END
+20120217055652_add_cash_to_doc.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/21/db/migrate/20120217055652_add_cash_to_doc.rb
+END
+20120128142329_create_cards.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/1/db/migrate/20120128142329_create_cards.rb
+END
+20120130162240_create_goods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6/db/migrate/20120130162240_create_goods.rb
+END
+20130504091853_create_incomes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/82/db/migrate/20130504091853_create_incomes.rb
+END
+20120216042804_create_item_docs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/15/db/migrate/20120216042804_create_item_docs.rb
+END
+20130504165955_change_format_in_item_doc_row.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/97/db/migrate/20130504165955_change_format_in_item_doc_row.rb
+END
+20120215075924_delete_price_columns.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/10/db/migrate/20120215075924_delete_price_columns.rb
+END
+20130504092950_add_period_to_income.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/82/db/migrate/20130504092950_add_period_to_income.rb
+END
+20120217060759_create_debts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/21/db/migrate/20120217060759_create_debts.rb
+END
+20120217034756_add_client_type.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/21/db/migrate/20120217034756_add_client_type.rb
+END
+20120515041719_add_item_doc_name.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/71/db/migrate/20120515041719_add_item_doc_name.rb
+END
+20120215080233_create_price_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/10/db/migrate/20120215080233_create_price_types.rb
+END
+20120302075345_add_fields_to_goods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/32/db/migrate/20120302075345_add_fields_to_goods.rb
+END

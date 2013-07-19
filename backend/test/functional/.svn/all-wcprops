@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/!svn/ver/82/test/functional
+END
+goods_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/6/test/functional/goods_controller_test.rb
+END
+interests_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6/test/functional/interests_controller_test.rb
+END
+cash_docs_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/22/test/functional/cash_docs_controller_test.rb
+END
+price_types_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/10/test/functional/price_types_controller_test.rb
+END
+incomes_and_expenses_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/82/test/functional/incomes_and_expenses_controller_test.rb
+END
+expenses_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/81/test/functional/expenses_controller_test.rb
+END
+cards_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/1/test/functional/cards_controller_test.rb
+END
+tags_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/24/test/functional/tags_controller_test.rb
+END
+users_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/1/test/functional/users_controller_test.rb
+END
+price_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/17/test/functional/price_controller_test.rb
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/!svn/ver/1/test/functional/.gitkeep
+END
+stocks_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/15/test/functional/stocks_controller_test.rb
+END
+item_docs_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/15/test/functional/item_docs_controller_test.rb
+END
+sessions_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/1/test/functional/sessions_controller_test.rb
+END
+parse_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/27/test/functional/parse_controller_test.rb
+END

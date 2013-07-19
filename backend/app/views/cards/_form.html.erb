@@ -1,0 +1,73 @@
+<% javascript_include_tag 'jquery-1.5.2.min', '_nested_form' %>
+<% javascript_include_tag "masked" %>
+
+<%= javascript_tag "jQuery(function($){$('#card_phone').mask('(999) 999-9999'); });" %>
+
+<%= nested_form_for(@card) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Номер карты" %><br />
+    <%= f.text_field :cardno %>
+  </div>
+  
+  <div class="field">
+	<%= f.label "Тип клиента" %><br />
+	<%= f.select :client_type, Card.client_types %> <br />
+  </div>
+  <div class="field">
+    <%= f.label "Фамилия" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label "Имя" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Отчество" %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label "Дата рождения" %><br />
+    <%= f.date_select :birthdate, :order => [:day, :month, :year], :start_year =>1920, :end_year=>Time.now.year-5, :use_month_names => rus_months %>
+  </div>
+
+  <div class="field>
+      <%= f.label "Пол" %> 
+      <%= f.radio_button :sex, "M" %> Муж.
+      <%= f.radio_button :sex, "F" %> Жен.
+  </div>
+    <div class="field">
+     <%= f.label "Телефон" %> <br/>
+     <%=f.text_field :phone %>
+  </div>
+  <div class="field">
+     <%= f.label "Эл. почта" %> <br/>
+     <%= f.text_field :email %>
+  </div> 
+  <div class="field">
+     <%= f.label "Адрес" %> <br/>
+     <%= f.text_area :address, :rows=>3 %>
+  </div>
+  <fieldset style="width:320px">
+  <legend>Интересы</legend>
+  <%= f.fields_for :interests do |int_form| %>
+  <%= int_form.text_field :value %>
+  <%= int_form.link_to_remove "Удалить"%>
+  <% end %>
+  <%= f.link_to_add "Добавить", :interests %>
+  </fieldset>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>
